@@ -9,12 +9,11 @@
   if (!main || !texto) return console.warn("not found", main, texto);
 
   const imagem = getParams("imagem") || "static/label.jpg";
-  const tamanho = getParams("tamanho") || 60;
+  const tamanho = getParams("tamanho") || "medio";
 
-  main.innerHTML = `
-    <custom-label imagem="${imagem}" texto="${texto}" tamanho=${tamanho}></custom-label>
-    <custom-label imagem="${imagem}" texto="${"açucar"}" tamanho=${tamanho}></custom-label>
-    <custom-label imagem="${imagem}" texto="semente de abóbora" tamanho=${tamanho}></custom-label>
-    <custom-label imagem="${imagem}" texto="${texto}" tamanho=${tamanho}></custom-label>
-  `;
+  const items = texto.trim().split(",").map(tx => `
+    <custom-label imagem="${imagem}" texto="${tx.trim()}" tamanho=${tamanho}></custom-label>
+  `).join("\n");
+
+  main.innerHTML = items;
 })();
