@@ -26,7 +26,7 @@ export const medium = [
     "linhaça",
     "sal",
     "sal",
-    "semente de abobora",
+    "semente de abóbora",
     "semente de girassol",
     "semente de mostarda",
     "tanchagem"

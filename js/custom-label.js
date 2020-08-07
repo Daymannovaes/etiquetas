@@ -7,10 +7,37 @@ class CustomLabel extends HTMLElement {
     template.innerHTML = `
       <style>
         :host {
-          --font-size: ${this.tamanho}pt;
+          --font-size: ${this.tamanhofonte}pt;
 
-          display: block;
+          display: inline-block;
+
+          width: ${this.tamanho}cm;
+          height: ${this.tamanho * 0.405}cm;
           position: relative;
+
+          background: url("${this.imagem}");
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          margin-bottom: 6px;
+          margin-left: 6px;
+        }
+
+        @media print {
+          :host {
+            /* A4 size */
+            width: ${this.tamanho}cm;
+            height: ${this.tamanho * 0.405}cm;
+          }
+        }
+
+        :host > div {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          align-items: center;
+          place-items: center;
         }
 
         img {
@@ -24,12 +51,11 @@ class CustomLabel extends HTMLElement {
           margin: 0;
 
           width: 100%;
+          padding: 0px ${this.margemfonte}px;
           text-align: center;
-          position: absolute;
-          top: calc(50% - 10px - var(--font-size) / 2);
         }
       </style>
-      <img src="${this.imagem}" alt="Etiqueta" />
+      <!-- <img src="${this.imagem}" alt="Etiqueta" /> -->
       <p>${this.texto}</p>
     `;
 
@@ -44,11 +70,29 @@ class CustomLabel extends HTMLElement {
   }
   get tamanho() {
     const tamanhos = new Map([
-      ["grande", 60],
-      ["medio", 40],
-      ["pequeno", 25],
+      ["grande", 9],
+      ["medio", 6],
+      ["pequeno", 4.5]
     ]);
-    return tamanhos.get(this.getAttribute("tamanho")) || this.getAttribute("tamanho") || "";
+    return tamanhos.get(this.getAttribute("tamanho")) || "";
+  }
+
+  get margemfonte() {
+    const tamanhos = new Map([
+      ["grande", 60],
+      ["medio", 44],
+      ["pequeno", 34]
+    ]);
+    return this.getAttribute("margemfonte") || tamanhos.get(this.getAttribute("tamanho")) || "";
+  }
+
+  get tamanhofonte() {
+    const tamanhos = new Map([
+      ["grande", 24],
+      ["medio", 14],
+      ["pequeno", 11]
+    ]);
+    return this.getAttribute("tamanhofonte") || tamanhos.get(this.getAttribute("tamanho")) || "";
   }
 }
 

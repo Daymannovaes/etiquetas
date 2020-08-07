@@ -13,5 +13,8 @@
 
   main.innerHTML = `
     <custom-label imagem="${imagem}" texto="${texto}" tamanho=${tamanho}></custom-label>
+    <custom-label imagem="${imagem}" texto="${"açucar"}" tamanho=${tamanho}></custom-label>
+    <custom-label imagem="${imagem}" texto="semente de abóbora" tamanho=${tamanho}></custom-label>
+    <custom-label imagem="${imagem}" texto="${texto}" tamanho=${tamanho}></custom-label>
   `;
 })();
