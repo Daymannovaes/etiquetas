@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Etiquetas</title>
+
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <form action="print.html">
+              <p>Etiquetas (separe com vírgula se quiser mais de uma)</p>
+              <input required name="texto" type="text" placeholder="Digite as etiquetas aqui">
+
+              <p>Tamanho da etiqueta</p>
+              <input checked required type="radio" name="tamanho" value="pequeno" id="pequeno">
+              <label for="pequeno">Pequena</label><br>
+              <input required type="radio" name="tamanho" value="medio" id="medio">
+              <label for="medio">Média</label><br>
+              <input required type="radio" name="tamanho" value="grande" id="grande">
+              <label for="grande">Grande</label><br>
+
+              <button>Imprimir</button>
+            </form>
+        </main>
+        <script src="js/custom-label.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
