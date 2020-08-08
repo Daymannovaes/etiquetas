@@ -70,11 +70,14 @@ class CustomLabel extends HTMLElement {
   }
   get tamanho() {
     const tamanhos = new Map([
-      ["grande", 9],
-      ["medio", 6],
-      ["pequeno", 4.5]
+      ["grande", 9.9 * this.escala],
+      ["medio", 6.6 * this.escala],
+      ["pequeno", 4.95 * this.escala]
     ]);
     return tamanhos.get(this.getAttribute("tamanho")) || "";
+  }
+  get escala() {
+    return parseInt(this.getAttribute("escala") || 1);
   }
 
   get margemfonte() {

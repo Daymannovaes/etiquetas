@@ -5,12 +5,33 @@
     <title>Etiquetas</title>
 
     <style>
+      * {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
       @media print {
         body {
           /* A4 size */
           width: 21cm;
           height: 29.7cm;
-          /* change the margins as you want them to be. */
+
+          margin: 0;
+          border: initial;
+          border-radius: initial;
+          width: initial;
+          min-height: initial;
+          box-shadow: initial;
+          background: initial;
+          page-break-after: always;
         }
 
         #voltar {

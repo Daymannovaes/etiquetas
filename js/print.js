@@ -1,6 +1,6 @@
 (function() {
   function getParams(param) {
-    return new URLSearchParams(location.search).get(param);
+    return new URLSearchParams(location.search).get(param) || "";
   }
 
   const texto = getParams("texto");
@@ -10,9 +10,19 @@
 
   const imagem = getParams("imagem") || "static/label.jpg";
   const tamanho = getParams("tamanho") || "medio";
+  const margemfonte = getParams("margemfonte");
+  const tamanhofonte = getParams("tamanhofonte");
+  const escala = getParams("escala");
 
   const items = texto.trim().split(",").map(tx => `
-    <custom-label imagem="${imagem}" texto="${tx.trim()}" tamanho=${tamanho}></custom-label>
+    <custom-label
+      imagem="${imagem}"
+      texto="${tx.trim()}"
+      tamanho="${tamanho}"
+      margemfonte="${margemfonte}"
+      tamanhofonte="${tamanhofonte}"
+      escala="${escala}"
+    ></custom-label>
   `).join("\n");
 
   main.innerHTML = items;
