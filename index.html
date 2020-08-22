@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Etiquetas</title>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web/dist/material-components-web.min.css" />
     <style>
       main {
         padding: 2em 3em;
@@ -15,8 +16,12 @@
         font-size: 16px;
       }
 
-      p.label {
-        margin: 2.4em 0 1em;
+      p.label, button {
+        margin: 2.4em 0 1em !important;
+      }
+
+      input[type=text] {
+        min-width: 400px;
       }
     </style>
   </head>
@@ -24,21 +29,90 @@
     <main>
       <form action="print.html">
         <p>Etiquetas (separe com vírgula se quiser mais de uma)</p>
-        <input required name="texto" type="text" placeholder="Digite as etiquetas aqui">
+        <label class="mdc-text-field mdc-text-field--outlined">
+          <input required
+            type="text"
+            name="texto"
+            placeholder="Digite as etiquetas aqui"
+            class="mdc-text-field__input" aria-labelledby="texto-aria">
+          <span class="mdc-notched-outline">
+            <span class="mdc-notched-outline__leading"></span>
+            <span class="mdc-notched-outline__notch">
+            </span>
+            <span class="mdc-notched-outline__trailing"></span>
+          </span>
+        </label>
 
+        <br>
+        <br>
         <p class="label">Tamanho da etiqueta</p>
-        <input checked required type="radio" name="tamanho" value="pequeno" id="pequeno">
-        <label for="pequeno">Pequena</label><br>
-        <input required type="radio" name="tamanho" value="medio" id="medio">
-        <label for="medio">Média</label><br>
-        <input required type="radio" name="tamanho" value="grande" id="grande">
-        <label for="grande">Grande</label><br>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" id="grande" value="grande" name="tamanho" checked>
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="grande">Grande</label>
+        </div>
 
-        <p class="label">Letra fina?</p>
-        <input type="checkbox" name="fontweight" value="100" id="100">
-        <label for="100">Sim</label><br>
+        <br>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" id="medio" value="medio" name="tamanho">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="medio">Média</label>
+        </div>
 
-        <button>Imprimir</button>
+        <br>
+        <div class="mdc-form-field">
+          <div class="mdc-radio">
+            <input class="mdc-radio__native-control" type="radio" id="pequeno" value="pequeno" name="tamanho">
+            <div class="mdc-radio__background">
+              <div class="mdc-radio__outer-circle"></div>
+              <div class="mdc-radio__inner-circle"></div>
+            </div>
+            <div class="mdc-radio__ripple"></div>
+          </div>
+          <label for="pequeno">Pequena</label>
+        </div>
+
+        <br>
+        <br>
+        <div class="mdc-form-field">
+          <div class="mdc-checkbox">
+            <input type="checkbox"
+                    name="fontweight"
+                    value="100"
+                   class="mdc-checkbox__native-control"
+                   id="weight-100"/>
+            <div class="mdc-checkbox__background">
+              <svg class="mdc-checkbox__checkmark"
+                   viewBox="0 0 24 24">
+                <path class="mdc-checkbox__checkmark-path"
+                      fill="none"
+                      d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+              </svg>
+              <div class="mdc-checkbox__mixedmark"></div>
+            </div>
+            <div class="mdc-checkbox__ripple"></div>
+          </div>
+          <label for="weight-100">Letra fina?</label>
+        </div>
+
+        <br>
+        <button class="mdc-button mdc-button--raised mdc-button--touch">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Gerar etiquetas</span>
+          <div class="mdc-button__touch"></div>
+        </button>
       </form>
     </main>
     <script src="js/custom-label.js"></script>
