@@ -13,6 +13,7 @@
   const margemfonte = getParams("margemfonte");
   const tamanhofonte = getParams("tamanhofonte");
   const fonte = getParams("fonte");
+  const fontweight = getParams("fontweight");
   const escala = getParams("escala");
 
   const items = texto.trim().split(",").map(tx => `
@@ -23,6 +24,7 @@
       margemfonte="${margemfonte}"
       tamanhofonte="${tamanhofonte}"
       fonte="${fonte}"
+      fontweight="${fontweight}"
       escala="${escala}"
     ></custom-label>
   `).join("\n");

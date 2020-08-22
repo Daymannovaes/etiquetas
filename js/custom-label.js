@@ -7,8 +7,9 @@ class CustomLabel extends HTMLElement {
     template.innerHTML = `
       <style>
         :host {
-          --font-size: ${this.tamanhofonte}pt;
           --font-family: ${this.fonte};
+          --font-size: ${this.tamanhofonte}pt;
+          --font-weight: ${this.fontweight};
 
           display: inline-block;
 
@@ -49,6 +50,7 @@ class CustomLabel extends HTMLElement {
           text-transform: uppercase;
           font-family: var(--font-family);
           font-size: var(--font-size);
+          font-weight: var(--font-weight);
           margin: 0;
 
           width: 100%;
@@ -101,6 +103,10 @@ class CustomLabel extends HTMLElement {
 
   get fonte() {
     return this.getAttribute("fonte") || "Algerian";
+  }
+
+  get fontweight() {
+    return this.getAttribute("fontweight") || "800";
   }
 }
 

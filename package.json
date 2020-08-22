@@ -8,5 +8,8 @@
     "test": "jest"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@material/button": "^7.0.0"
+  }
 }

@@ -3,6 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Etiquetas</title>
+    <style>
+      main {
+        padding: 2em 3em;
+      }
+
+      form {
+        max-width: 786px;
+        margin: 0 auto;
+        font-family: Arial;
+        font-size: 16px;
+      }
+
+      p.label {
+        margin: 2.4em 0 1em;
+      }
+    </style>
   </head>
   <body>
     <main>
@@ -10,13 +26,17 @@
         <p>Etiquetas (separe com vírgula se quiser mais de uma)</p>
         <input required name="texto" type="text" placeholder="Digite as etiquetas aqui">
 
-        <p>Tamanho da etiqueta</p>
+        <p class="label">Tamanho da etiqueta</p>
         <input checked required type="radio" name="tamanho" value="pequeno" id="pequeno">
         <label for="pequeno">Pequena</label><br>
         <input required type="radio" name="tamanho" value="medio" id="medio">
         <label for="medio">Média</label><br>
         <input required type="radio" name="tamanho" value="grande" id="grande">
         <label for="grande">Grande</label><br>
+
+        <p class="label">Letra fina?</p>
+        <input type="checkbox" name="fontweight" value="100" id="100">
+        <label for="100">Sim</label><br>
 
         <button>Imprimir</button>
       </form>
