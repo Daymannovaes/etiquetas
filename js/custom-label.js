@@ -8,6 +8,7 @@ class CustomLabel extends HTMLElement {
       <style>
         :host {
           --font-size: ${this.tamanhofonte}pt;
+          --font-family: ${this.fonte};
 
           display: inline-block;
 
@@ -45,8 +46,8 @@ class CustomLabel extends HTMLElement {
         }
 
         p {
-          font-family: Arial;
           text-transform: uppercase;
+          font-family: var(--font-family);
           font-size: var(--font-size);
           margin: 0;
 
@@ -96,6 +97,10 @@ class CustomLabel extends HTMLElement {
       ["pequeno", 11]
     ]);
     return this.getAttribute("tamanhofonte") || tamanhos.get(this.getAttribute("tamanho")) || "";
+  }
+
+  get fonte() {
+    return this.getAttribute("fonte") || "Algerian";
   }
 }
 
