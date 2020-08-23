@@ -75,7 +75,7 @@ class CustomLabel extends HTMLElement {
     const tamanhos = new Map([
       ["grande", 9.9 * this.escala],
       ["medio", 6.6 * this.escala],
-      ["pequeno", 4.95 * this.escala]
+      ["pequeno", 5.6 * this.escala]
     ]);
     return tamanhos.get(this.getAttribute("tamanho")) || "";
   }
