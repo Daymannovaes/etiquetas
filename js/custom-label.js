@@ -80,7 +80,7 @@ class CustomLabel extends HTMLElement {
     return tamanhos.get(this.getAttribute("tamanho")) || "";
   }
   get escala() {
-    return parseInt(this.getAttribute("escala") || 1);
+    return parseFloat(this.getAttribute("escala") || 1);
   }
 
   get margemfonte() {
