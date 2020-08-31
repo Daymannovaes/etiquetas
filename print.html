@@ -57,9 +57,17 @@
         }
       }
     </style>
+
+    <script>
+      function returnToIndex(event) {
+        if (history.length === 1) return true;
+        event.preventDefault();
+        history.back();
+      }
+    </script>
   </head>
   <body>
-    <a href="index.html" id="voltar">
+    <a href="index.html" id="voltar" onclick="returnToIndex(event);">
       <button class="mdc-button mdc-button--touch">
         <div class="mdc-button__ripple"></div>
         <span class="mdc-button__label">Voltar</span>

@@ -95,8 +95,8 @@ class CustomLabel extends HTMLElement {
   get tamanhofonte() {
     const tamanhos = new Map([
       ["grande", 24],
-      ["medio", 14],
-      ["pequeno", 11]
+      ["medio", 18],
+      ["pequeno", 14]
     ]);
     return this.getAttribute("tamanhofonte") || tamanhos.get(this.getAttribute("tamanho")) || "";
   }
